@@ -24,17 +24,13 @@ public class LoginController {
             }
         } catch (WrongLoginException ex) {
             System.err.println("Ошибка при регистрации: " + ex.getMessage());
-            return "Ошибка при регистрации. " + ex.getMessage();
+            return "Ошибка при регистрации. Неверный логин " + ex.getMessage();
         } catch (WrongPasswordException ex) {
             System.err.println("Ошибка при регистрации: " + ex.getMessage());
             return "Ошибка при регистрации. Проверьте пароль";
-        } catch (IllegalArgumentException ex) {
-            System.err.println("Ошибка при регистрации: " + ex.getMessage());
-            return "Ошибка при регистрации. Проверьте логин и пароль";
         } catch (Exception ex) {
             System.err.println("Ошибка при регистрации: " + ex.getMessage());
-            return "Ошибка при регистрации";
+            return "Ошибка при регистрации. Проверьте логин и пароль";
         }
     }
-
 }
